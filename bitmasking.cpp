@@ -49,7 +49,7 @@ int main() {
     updateBit(n, 1, 1); cout << n << endl;
     // let's unSet last 3 bits of 15, expected answer = 8;
     cout << unSetLastIBits(15, 3) << endl;
-    // let's unset bits from i = 3 to 7 of 2747, expected answer = ;
+    // let's unset bits from i = 3 to 7 of 2747, expected answer = 2563 ;
     cout << unSetInRange(2747, 3, 7) << endl;
     return 0;
 }
