@@ -33,6 +33,11 @@ int unSetInRange(int value, int i, int j){
     return (value & ((-1<<(j+1)) | ((1<<i)-1)));
 }
 
+int replaceBits(int n, int m, int i, int j){
+    n = unSetInRange(n, i, j);
+    return (n |(m<<i));
+}
+
 int main() {
     int n(5), m(7);
     // check for two numbers
@@ -49,7 +54,9 @@ int main() {
     updateBit(n, 1, 1); cout << n << endl;
     // let's unSet last 3 bits of 15, expected answer = 8;
     cout << unSetLastIBits(15, 3) << endl;
-    // let's unset bits from i = 3 to 7 of 2747, expected answer = 2563 ;
+    // let's unset bits from i = 3 to 7 of 2747, expected answer = 2563;
     cout << unSetInRange(2747, 3, 7) << endl;
+    // let's obtain the number back from previous operation;
+    cout << replaceBits(2563, 23, 3, 7) << endl;
     return 0;
 }
